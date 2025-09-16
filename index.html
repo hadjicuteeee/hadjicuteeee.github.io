@@ -1,37 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="portfolio.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jihad Dion | Portfolio</title>
+  <style>
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #0a0a0a; 
+      color: #e5e5e5;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      background: #0a0a0a;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #d1d5db;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem 8%;
+      gap: 2rem;
+      flex-wrap: wrap;
+      background: #0a0a0a; 
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      color: #e5e5e5;
+    }
+
+    .hero-text h1 span {
+      color: #38bdf8;
+    }
+
+    .hero-text h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      color: #9ca3af;
+    }
+
+    .hero-text p {
+      max-width: 500px;
+      margin-bottom: 1.5rem;
+      color: #d1d5db;
+    }
+
+    .btn {
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+    }
+
+   
+    .hero-img {
+      width: 280px;
+      height: 280px; 
+      border-radius: 50%;
+      overflow: hidden; 
+      border: 3px solid #38bdf8;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+    }
+
+    .hero-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.8);
+    }
+
+    
+    .about, .skills, .projects, .contact {
+      padding: 4rem 8%;
+      text-align: center;
+      background: #0a0a0a;
+      margin-top: 1rem;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #38bdf8;
+      font-size: 2rem;
+    }
+
+   
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .skill-card {
+      background: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: bold;
+      color: #d1d5db;
+      border: 1px solid #262626;
+    }
+
+    .skill-card:hover {
+      background: #38bdf8;
+      color: #0a0a0a;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+    }
+
+  
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .project-card {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: 0.3s;
+      border: 1px solid #262626;
+    }
+
+    .project-card:hover {
+      background: #262626;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    }
+
+  
+    .socials a {
+      margin: 0 1rem;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #0ea5e9;
+    }
+
+   
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0a0a0a;
+      margin-top: 2rem;
+      color: #9ca3af;
+      border-top: 1px solid #1f2937;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Jinwoo</div>
-    </header>
+  
+ 
+  <header>
+    <nav class="navbar">
+      <div class="logo">Jihad Dion</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Hi, I'm <span>Jihad Dion</span></h1>
-            <h2>and current 2nd-year BSIT student</h2>
-            <p> with foundations in SQL, Excel, Tableau, Database and Google BigQuery.
-            Passionate about exploring data, identifying trends, and transforming raw information into actionable insights.
-            <div class="buttons">
-                <a href="https://github.com/hadjicuteeee" class="btn" target="_blank">Portfolio</a>
-                <a href="https://www.facebook.com/jihaddionapues/" class="btn outline" target="_blank">Contact me!</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <img src="hadji.jpeg" alt="Profile Photo">
-        </div>
-    </section>
+ 
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Jihad Dion</span></h1>
+      <h2>2nd-Year BSIT Student & Aspiring Data Analyst</h2>
+      <p>Passionate about transforming raw data into insights using modern tools and cloud technologies.</p>
+      
+    </div>
+    <div class="hero-img">
+      <img src="hadji.html.jpg" alt="Jihad Dion - Portfolio">
+    </div>
+  </section>
+
+ 
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a 21-year-old BSIT student with strong foundations in data analysis.  
+      I specialize in SQL, Google Sheets, and data visualization tools like Power BI.  
+      With BigQuery in my toolkit, I’m diving into cloud-based analytics to handle large-scale data.  
+      Outside of academics, I enjoy spending time on my laptop and playing online games.
+    </p>
+  </section>
+
+ 
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skill-grid">
+      <div class="skill-card">SQL</div>
+      <div class="skill-card">JSON</div>
+      <div class="skill-card">Excel</div>
+      <div class="skill-card">Google Sheets</div>
+      <div class="skill-card">Power BI</div>
+      <div class="skill-card">BigQuery</div>
+    </div>
+  </section>
+
+ 
+ 
+
+ 
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Let’s connect! Reach me on my socials or drop a message.</p>
+    <div class="socials">
+      <a href="https://github.com/hadjicuteeee" target="_blank">GitHub</a>
+      <a href="https://www.facebook.com/jihaddionapues/" target="_blank">Facebook</a>
+    </div>
+  </section>
+
 </body>
 </html>
-
-
-
-
-
-
