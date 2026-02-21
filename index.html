@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hadji</title>
-   
+    <title>Hadjizzzy | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -13,7 +11,9 @@
             margin: 0;
             padding: 0;
             color: #111;
+            transition: background-color 0.3s, color 0.3s;
         }
+
         .container {
             max-width: 1000px;
             margin: 40px auto;
@@ -35,6 +35,12 @@
         .profile-pic {
             width: 130px;
             border-radius: 50%;
+           
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .profile-pic:hover {
+            transform: rotate(10deg) scale(1.08);
         }
 
         .profile-info h1 {
@@ -62,7 +68,7 @@
             cursor: pointer;
             font-weight: 600;
             font-size: 14px;
-            transition: 0.2s;
+            transition: 0.3s;
         }
 
         .btn-primary {
@@ -136,24 +142,61 @@
                 flex-direction: column;
             }
         }
+
+        
+        body.dark-mode {
+            background-color: #111;
+            color: #f5f5f5;
+        }
+
+        body.dark-mode header,
+        body.dark-mode .left,
+        body.dark-mode .right {
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        body.dark-mode section p,
+        body.dark-mode section li,
+        body.dark-mode .profile-info p {
+            color: #ccc;
+        }
+
+        body.dark-mode .btn-primary {
+            background-color: #f5f5f5;
+            color: #111;
+        }
+
+        body.dark-mode .btn-primary:hover {
+            background-color: #ddd;
+        }
+
+        body.dark-mode .btn-secondary {
+            border: 1px solid #f5f5f5;
+            color: #f5f5f5;
+        }
+
+        body.dark-mode .btn-secondary:hover {
+            background-color: #f5f5f5;
+            color: #111;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        
         <header>
             <img src="shesh.png" alt="Jihad" class="profile-pic">
-               <link rel="icon" type="image/png" href="shesh.png">
+            <link rel="icon" type="image/png" href="shesh.png">
             <div class="profile-info">
                 <h1>Jihad Dion N. Apues</h1>
                 <p>Imus, Cavite</p>
                 <p>Aspiring Data Engineering</p>
                 <div class="buttons">
-                    <button class="btn-primary" onclick="window.location.href='#contact'">Contact me</button>
+                    <button class="btn-primary" onclick="showContact()">Contact me</button>
+                    <button class="btn-secondary" onclick="toggleDarkMode()">🌙</button>
                 </div>
             </div>
         </header>
-
         <main>
             <div class="left">
                 <section class="about">
@@ -163,18 +206,18 @@
                 </section>
 
                 <section class="tech-stack">
-                    <h2>Tech Stack</h2>
+                    <h2>Tech Stack</h2> 
                     <div class="stack-category">
                         <h3>Languages</h3>
                         <p>Python(Pandas, Numpy), SQL </p>
                     </div>
                     <div class="stack-category">
                         <h3>Tools</h3>
-                        <p>PostgreSQL, MySQL(Workbench), Git </p>
+                        <p>PostgreSQL, MySQL(Workbench), Git, RPA </p>
                     </div>
                     <div class="stack-category">
                         <h3>Data Visualization</h3>
-                        <p>Seaborn, Power BI</p>
+                        <p>Seaborn, Power BI, Matplotlib</p>
                     </div>
                 </section>
             </div>
@@ -190,10 +233,18 @@
                         <li><strong>2024</strong> - Developed POS System: Created a functional Point-of-Sale system with inventory and sales management using Visual Basic and DataGridView.</li>
                     </ul>
                 </section>
-                
             </div>
         </main>
     </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+        function showContact() {
+            alert("Contact Number: 09756379503");
+        }
+    </script>
 </body>
 </html>
-
